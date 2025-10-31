@@ -22,7 +22,7 @@ CLIENT_URL = os.getenv("FRONTEND_URL", "http://localhost:3000")
 # --- CORS Middleware ---
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[CLIENT_URL], # Allows React app
+    allow_origins=[CLIENT_URL, "https://*.hf.space"], # Allows React app
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
