@@ -196,12 +196,6 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 
 ## 👩‍💻 Author
 
-**Your Name**
+**Kamuni Abhilash**
 Built with ❤️ using FastAPI, React, LangChain, and Qdrant.
 
-```
-
----
-
-Would you like me to include a **section for deployment (Docker or cloud hosting)** in the README as well? It’s often helpful for production use.
-```
