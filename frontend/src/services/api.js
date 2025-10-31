@@ -1,7 +1,8 @@
 import axios from 'axios';
 
+const API_URL = process.env.REACT_APP_API_URL || "http://localhost:8000";
 // The API is running on http://localhost:8000
-const API = axios.create({ baseURL: "http://localhost:8000" });
+const API = axios.create({ baseURL: API_URL });
 
 /**
  * Sends a new question to the backend.

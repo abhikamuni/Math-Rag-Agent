@@ -5,7 +5,7 @@ uvicorn[standard]
 pydantic
 python-dotenv
 requests
-
+gunicorn
 
 #AI & LangChain
 
