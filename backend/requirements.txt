@@ -1,0 +1,28 @@
+#Core Web Server
+
+fastapi
+uvicorn[standard]
+pydantic
+python-dotenv
+requests
+
+
+#AI & LangChain
+
+langchain
+langgraph
+langchain-google-genai
+langchain-core
+dspy-ai
+langgraph-checkpoint-sqlite
+#Vector DB & Embeddings
+
+
+qdrant-client
+sentence-transformers
+
+datasets
+tqdm
+pyarrow
+
+requests

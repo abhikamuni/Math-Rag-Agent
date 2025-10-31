@@ -1,0 +1,47 @@
+{
+  "refiner.predict": {
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "question": "5+5-19*5 =?",
+        "original_solution": "Hello there! I'd be happy to help you solve this math problem step-by-step.\n\nYour question is: **5 + 5 - 19 * 5 = ?**\n\nTo solve this, we need to follow the \"Order of Operations.\" This is a set of rules that tells us the correct sequence to perform mathematical operations. A common acronym to remember this order is **PEMDAS** (Parentheses, Exponents, Multiplication and Division, Addition and Subtraction) or **BODMAS** (Brackets, Orders, Division and Multiplication, Addition and Subtraction).\n\nLet's break it down:\n\n**Step 1: Look for Parentheses or Brackets.**\nIn your problem, `5 + 5 - 19 * 5`, there are no parentheses or brackets, so we can move to the next step.\n\n**Step 2: Look for Exponents or Orders.**\nThere are no exponents (like 2^3) in this problem, so we move on.\n\n**Step 3: Perform Multiplication and Division (from left to right).**\nLooking at our expression `5 + 5 - 19 * 5`, we see a multiplication: `19 * 5`.\nLet's calculate that first:\n`19 * 5 = 95`\n\nNow, we replace `19 * 5` with `95` in our original expression:\n`5 + 5 - 95`\n\n**Step 4: Perform Addition and Subtraction (from left to right).**\nNow we have `5 + 5 - 95`. We work from left to right.\nFirst, let's do the addition: `5 + 5`.\n`5 + 5 = 10`\n\nNow, replace `5 + 5` with `10` in the expression:\n`10 - 95`\n\nFinally, perform the subtraction:\n`10 - 95 = -85`\n\nSo, the final answer is **-85**.",
+        "user_feedback": "you can make it simple",
+        "refined_solution": "you can make it simple"
+      }
+    ],
+    "signature": {
+      "instructions": "You are a Math Professor. A student was not satisfied with your\nfirst solution and has provided feedback.\nYour task is to generate a new, improved, and final step-by-step solution\nthat directly addresses the student's feedback.\nBe humble and acknowledge the feedback.",
+      "fields": [
+        {
+          "prefix": "Question:",
+          "description": "The original math question."
+        },
+        {
+          "prefix": "Original Solution:",
+          "description": "Your first, incorrect/insufficient solution."
+        },
+        {
+          "prefix": "User Feedback:",
+          "description": "The student's feedback or correction."
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Refined Solution:",
+          "description": "Your new, refined step-by-step solution."
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.11",
+      "dspy": "3.0.3",
+      "cloudpickle": "3.1"
+    }
+  }
+}

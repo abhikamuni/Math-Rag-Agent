@@ -1,0 +1,14 @@
+#For ingest_math_dataset.py
+
+qdrant-client
+sentence-transformers
+datasets # For Hugging Face
+python-dotenv
+tqdm # Progress bar
+
+#For benchmark.py
+
+requests
+datasets
+tqdm
+pyarrow
