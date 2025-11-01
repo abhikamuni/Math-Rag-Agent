@@ -46,7 +46,7 @@ def search_knowledge_base(question: str) -> str | None:
         vector = embedding_model.encode(question).tolist()
         
         search_result = qdrant_client.search(
-            collection_name="math_problems", # Must match your ingest script
+            collection_name="math_problems", # Must match ingest script
             query_vector=vector,
             limit=1,
             score_threshold=0.60 # Flexible threshold

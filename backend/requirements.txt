@@ -20,9 +20,7 @@ langgraph-checkpoint-sqlite
 
 qdrant-client
 sentence-transformers
-
 datasets
 tqdm
 pyarrow
-
 requests

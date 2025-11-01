@@ -7,8 +7,8 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from typing import Dict, Any
 
-# Import our new modular services
-# We need to make sure the path is correct
+# Import our modular services
+# make sure the path is correct
 from app.services.guardrails import check_input_guardrail, check_output_guardrail
 from app.services.rag_pipeline import generate_solution
 from app.services.dspy_feedback import refine_solution_with_dspy

@@ -8,7 +8,7 @@ const API = axios.create({ baseURL: API_URL });
  * Sends a new question to the backend.
  * @param {string} question The user's math question.
  * @param {string} student_id A placeholder ID.
- * @returns {Promise<object>} The agent's first response.
+ * @returns {Promise<object>} The agent's first response .
  */
 export const askMathQuestion = async (question, student_id = "student1") => {
   const response = await API.post("/ask/", { question, student_id });

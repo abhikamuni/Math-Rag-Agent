@@ -1,3 +1,4 @@
+#JEE Bench dataset convertion code
 import requests
 import json
 from datasets import load_dataset
@@ -6,8 +7,8 @@ import time
 
 # Load the JEE Bench dataset
 DATASET_NAME = "AI4Bharat/JEEBench"
-DATASET_CONFIG = "main" # Or "iitjee", "jee_main", etc.
-DATASET_SPLIT = "test[:50]" # Run on first 50 test questions
+DATASET_CONFIG = "main" 
+DATASET_SPLIT = "test[:50]" 
 AGENT_URL = "http://localhost:8000/ask"
 RESULTS_FILE = "benchmark_results.json"
 

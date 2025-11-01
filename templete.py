@@ -6,49 +6,48 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s: %(message)s')
 
 list_of_files = [
     # Root files
-    ".env.example",  # Updated to add TAVILY_API_KEY
+    ".env.example",  
     ".gitignore",
     "README.md",
 
-    # Backend - Deployment and Top Level
+    # Backend 
     "backend/Dockerfile",
-    "backend/requirements.txt",  # Updated to add dspy-ai, tavily, langgraph-checkpoint-sqlite
-    "backend/feedback_log.jsonl", # Will be created automatically
-    "backend/checkpoints.sqlite", # Will be created automatically
+    "backend/requirements.txt",  
+    "backend/feedback_log.jsonl", 
+    "backend/checkpoints.sqlite", 
     
-    # Backend - Application Core
     "backend/app/__init__.py",
-    "backend/app/main.py",       # NEW "lifespan" version
-    "backend/app/schemas.py",    # NEW file
+    "backend/app/main.py",       
+    "backend/app/schemas.py",    
     
-    # Backend - Core Utilities
+    
     "backend/app/core/__init__.py",
-    "backend/app/core/clients.py", # NEW file - replaces old config.py
+    "backend/app/core/clients.py",
     
-    # Backend - Services (Agent Logic, Guardrails, HITL)
+    
     "backend/app/services/__init__.py",
-    "backend/app/services/guardrails.py",  # NEW file - has both guardrails
-    "backend/app/services/rag_pipeline.py",# NEW file - has RAG and MCP logic
-    "backend/app/services/dspy_feedback.py",# NEW file - has HITL/DSPy logic
+    "backend/app/services/guardrails.py",  
+    "backend/app/services/rag_pipeline.py",
+    "backend/app/services/dspy_feedback.py",
 
-    # Frontend - Deployment and Top Level
+    # Frontend 
     "frontend/package.json",
     "frontend/public/index.html",
     
-    # Frontend - Source
+
     "frontend/src/App.css",
     "frontend/src/App.js",
     "frontend/src/index.js",
     
-    # Frontend - Components
-    "frontend/src/components/ChatWindow.js", # Updated for stateless HITL
-    "frontend/src/components/Message.js",    # Updated for stateless HITL
-    "frontend/src/components/Feedback.js",   # Updated for stateless HITL
+  
+    "frontend/src/components/ChatWindow.js", 
+    "frontend/src/components/Message.js",    
+    "frontend/src/components/Feedback.js",   
     
-    # Frontend - Services
-    "frontend/src/services/api.js",  # Updated for stateless HITL
+   
+    "frontend/src/services/api.js",  
     
-    # Scripts (No Change)
+    # Scripts 
     "scripts/ingest_math_dataset.py",
     "scripts/optimize.py",
     "scripts/benchmark.py",

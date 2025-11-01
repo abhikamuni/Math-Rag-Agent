@@ -48,17 +48,13 @@ print("--- SentenceTransformer Model Loaded ---")
 
 
 # --- 3. Tavily Client (for MCP/Web Search) ---
-# NOTE: Your project requires "MCP." In a real-world scenario, you would
-# run a separate MCP server (e.g., `mcp-server up tavily`).
-# For simplicity and to avoid running a *second* server, we are using
-# the Tavily client directly, which is what the MCP server does internally.
 # This provides the *functionality* of your MCP pipeline.
 tavily_client = TavilyClient(api_key=TAVILY_API_KEY)
 print("--- Tavily Client Initialized (Simulating MCP) ---")
 
 
 # --- 4. DSPy Client (for Feedback/Refinement) ---
-# We configure DSPy to use the same Gemini model
+# DSPy to use the same Gemini model
 try:
     dspy_gemini_lm = dspy.LM(
         model="gemini-2.5-flash",

@@ -14,8 +14,8 @@ if BACKEND_DIR not in sys.path:
 # --- End Setup ---
 
 try:
-    # Now we can import our app's modules
-    from backend.app.core.clients import dspy_gemini_lm # This configures DSPy
+
+    from backend.app.core.clients import dspy_gemini_lm 
     from backend.app.services.dspy_feedback import RefinementModule, RefineSolutionSignature
 except ImportError as e:
     print(f"Error: {e}")
@@ -42,9 +42,6 @@ def load_feedback_log(log_file_path="backend/feedback_log.jsonl"):
                 # user told us *why* it was bad.
                 if entry.get("rating") == "bad" and entry.get("feedback_text"):
                     
-                    # We create a dspy.Example
-                    # The "gold standard" (gt) refined_solution is the user's feedback.
-                    # This teaches the model to produce an output *like* the user's feedback.
                     example = dspy.Example(
                         question=entry["question"],
                         original_solution=entry["original_solution"],
@@ -68,7 +65,6 @@ def load_feedback_log(log_file_path="backend/feedback_log.jsonl"):
     return trainset
 
 # --- 2. Define the Evaluation Metric ---
-# How do we know if the optimizer is doing a good job?
 # We'll use an "LLM-as-a-judge" to score the new, refined answers.
 
 class AssessRefinement(dspy.Signature):
@@ -95,7 +91,7 @@ def llm_as_judge_metric(gold, pred, trace=None):
     feedback = gold.user_feedback
     refined = pred.refined_solution
     
-    # We use a simple Predict module for the judge
+    # simple Predict module for the judge
     judge = dspy.Predict(AssessRefinement)
     result = judge(
         original_solution=original,
@@ -103,17 +99,17 @@ def llm_as_judge_metric(gold, pred, trace=None):
         refined_solution=refined
     )
     
-    # We want a high score.
+
     score = 0
     try:
-        score = int(result.assessment.split()[0]) # "5" or "5 points" -> 5
+        score = int(result.assessment.split()[0]) 
     except:
-        pass # Score remains 0 if parsing fails
+        pass 
         
-    if trace is None: # During optimization, trace is None
-        return score >= 4 # We consider 4 or 5 a "success"
+    if trace is None: 
+        return score >= 4 
         
-    # If we're debugging (trace is not None), be more verbose
+
     trace.metric_score = score
     trace.metric_feedback = result.assessment
     return score >= 4
@@ -132,7 +128,7 @@ def main():
         return
 
     # 2. Set up the Optimizer
-    # We will use BootstrapFewShot to generate new, high-quality
+    # use BootstrapFewShot to generate new, high-quality
     # few-shot examples (demos) for our prompt.
     optimizer = dspy.BootstrapFewShot(
         metric=llm_as_judge_metric,

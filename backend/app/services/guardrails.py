@@ -65,7 +65,7 @@ def check_input_guardrail(question: str) -> (bool, str):
         return (False, f"Error during input validation: {e}")
 
 # --- 2. Output Guardrail (Python-based) ---
-# This is fast, free, and avoids the rate-limit crashes you saw before.
+
 
 REFUSAL_PHRASES = [
     "i'm sorry", "i cannot", "i am unable", "i am not programmed to", "as an ai"

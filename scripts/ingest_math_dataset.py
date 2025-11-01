@@ -18,7 +18,6 @@ DATASET_SPLIT = "train[:1000]" # Ingest first 1000 problems
 def ingest_to_vectordb():
     # Load .env file to get API keys
     load_dotenv()
-    
     QDRANT_URL = os.environ.get("VECTORDB_URL")
     QDRANT_API_KEY = os.environ.get("QDRANT_API_KEY")
 

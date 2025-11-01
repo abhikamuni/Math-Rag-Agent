@@ -1,5 +1,5 @@
 import dspy
-from app.core.clients import dspy_gemini_lm # Use our shared DSPy client
+from app.core.clients import dspy_gemini_lm # Use shared DSPy client
 
 # --- 1. Define the DSPy Signature ---
 # This tells DSPy what our "program" (the LLM) should do.
@@ -20,7 +20,7 @@ class RefineSolutionSignature(dspy.Signature):
     )
 
 # --- 2. Define the DSPy Module (Program) ---
-# We'll use ChainOfThought to make it reason better.
+#  ChainOfThought to make it reason better.
 class RefinementModule(dspy.Module):
     def __init__(self):
         super().__init__()
@@ -35,7 +35,7 @@ class RefinementModule(dspy.Module):
         return dspy.Prediction(refined_solution=result.refined_solution)
 
 # --- 3. Create the function our API will call ---
-# We initialize the module here.
+# initialize the module here.
 dspy_refiner = RefinementModule()
 
 try:
