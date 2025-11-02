@@ -10,10 +10,6 @@ This full-stack AI application uses a modern Agentic-RAG pipeline to answer math
 
 ---
 
-## 🚀 Live Demo
-
-**Frontend (React):** [https://math-rag-agent.vercel.app](https://math-rag-agent.vercel.app)  
-**Backend (FastAPI):** [https://your-name-math-agent-backend.hf.space](https://your-name-math-agent-backend.hf.space)
 
 ---
 
@@ -106,7 +102,7 @@ Populate your **Qdrant database** before running the app.
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git
+git clone https://github.com/abhikamui/Math-Rag-Agent.git
 cd YOUR_REPO
 
 # Install backend dependencies
